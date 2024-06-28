@@ -1,8 +1,11 @@
 import React from "react";
+import { useMemo } from "react";
 
 const PostList = ({ posts, selectedUserId, handlePostSelect }) => {
 
-  const filteredPosts = posts.filter((post) => post.userId === selectedUserId);
+  const filteredPosts = useMemo(() => {
+    return posts.filter((post) => post.userId === selectedUserId);
+  },[posts, selectedUserId]);
 
   return (
     <div>

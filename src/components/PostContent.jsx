@@ -1,6 +1,6 @@
 import React from "react";
 
-const PostContent = ({ content }) => {
+const PostContent = React.memo(({ content }) => {
   return (
     <div>
       {content ? (
@@ -16,6 +16,6 @@ const PostContent = ({ content }) => {
       )}
     </div>
   );
-};
+});
 
 export default PostContent;
